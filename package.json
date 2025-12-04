@@ -1,0 +1,26 @@
+{
+  "name": "ders6_updated",
+  "version": "1.0.0",
+  "description": "Express + EJS + MySQL demo (ders6_updated)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.22.1",
+    "express-session": "^1.18.2",
+    "js": "^0.1.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.15.3",
+    "node": "^20.19.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "keywords": [],
+  "type": "commonjs"
+}

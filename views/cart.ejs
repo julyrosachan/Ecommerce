@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+<div class="container mt-4">
+  <h2>Your Cart 🛒</h2>
+
+  <% if (cart.length === 0) { %>
+    <p>Cart is empty.</p>
+  <% } else { %>
+    <table class="table">
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+
+      <% cart.forEach(item => { %>
+        <tr>
+          <td><img src="/image/<%= item.image %>" width="70"></td>
+          <td><%= item.productName %></td>
+          <td>
+            <% if (item.apply == 1) { %>
+              <strong class="text-danger">$<%= item.discount %></strong>
+            <% } else { %>
+              $<%= item.price %>
+            <% } %>
+          </td>
+          <td>
+            <a href="/remove-item/<%= item.productid %>" class="btn btn-sm btn-danger">Remove</a>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+
+    <h3>Total: $<%= total.toFixed(2) %></h3>
+
+    <a href="/clear-cart" class="btn btn-warning mt-3">Clear Cart</a>
+  <% } %>
+</div>
+
+<%- include('partials/footer') %>
